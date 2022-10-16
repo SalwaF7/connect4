@@ -36,6 +36,7 @@ class Grid:
         adjacent = 0
         cpt=0
         color = self.grid[line][column]
+       
 
         # Horizontal
         for cell in self.grid[line]:
@@ -45,7 +46,8 @@ class Grid:
                     return True
             else:
                 adjacent = 0
-        ###
+        #########
+
         # TODO: Vertical
         sel=0 #initialisation à zéro
 
@@ -58,9 +60,10 @@ class Grid:
                         return True
                     else:
                         sel = 0
-        ###
-        # TODO: Diagonal
-       
+        
+        ########
+        ## TODO: Diagonal
+        
         for line in range(self.lines-3):
             cpt=0
             for column in range(self.columns-1):
@@ -84,15 +87,15 @@ class Grid:
         return False
 
     def tie(self)-> bool:
-        # TODO
-        #boucle pour traiter les cases vides dans chaque ligne
+        #TODO
+         #boucle pour traiter les cases vides dans chaque ligne
         for line in range(Grid.lines):
             if Cell.EMPTY in self.grid[line]:
-                return False
-        return True
-        
+            
 
-    
+                return False
+
+        return True
 
 
 class Player:
